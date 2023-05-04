@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoonNight</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section>
+        <img src="img/bg.jpg" alt="bg" id="bg">
+        <img src="img/moon.png" alt="moon" id="moon">
+        <img src="img/mountain.png" alt="mountain" id="mountain">
+        <img src="img/road.png" alt="road" id="road">
+        <h2 class="text" id="text">Moon Light</h2>
+    </section>
+
+    <section class="content">
+        <h3>Parallax Background Scrolling</h3>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam, architecto iste sint facere velit vel
+            beatae fuga similique natus culpa! Alias ipsam fugit consectetur adipisci veniam assumenda eum quae
+            voluptatibus. Porro amet numquam commodi officia aliquam facere laborum beatae expedita. Quaerat illum
+            asperiores, maxime temporibus omnis eos vitae hic, quam quo voluptate cum distinctio ducimus provident nemo
+            mollitia cupiditate libero ipsa aliquam suscipit nobis deleniti repellendus dignissimos. Incidunt fugit
+            nobis tempore culpa maiores velit, fuga enim? Ipsam quisquam aut facilis optio nostrum ex exercitationem
+            architecto voluptas impedit ea fugit saepe enim temporibus harum, rerum sapiente dolorem ipsum neque modi.
+            Ratione est quibusdam perspiciatis magnam deserunt fugit eum at esse accusantium necessitatibus sequi
+            asperiores aperiam sed optio dignissimos consectetur molestiae reiciendis, cum doloribus minima laborum
+            ullam? Pariatur asperiores adipisci qui nulla tenetur quae cupiditate deleniti magnam at culpa, sed illo
+            reprehenderit architecto minus consequatur facilis, tempore error exercitationem, quibusdam reiciendis
+            consequuntur.</p>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script>
+       let bg =$('#bg');
+        let moon =$('#moon');
+        let mountain =$('#mountain');
+        let road =$('#road');
+        let text =$('#text');
+
+        $(window).scroll(function(){
+            let value = $(this).scrollTop();
+            console.log(value)
+
+            moon.css({left:-value*0.2+'px',top:value*0.35+'px'})
+            bg.css({top:value*0.2+"px"})
+            mountain.css({top:-value*0.15+"px"})
+            road.css({top:value*0.15+"px"})
+            text.css({top:value+"px"})
+
+        })
+    </script>
+
+</body>
+
+</html>
